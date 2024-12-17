@@ -1,19 +1,19 @@
 @!@!@STARTMSG 2262:0 @!@!@
-TLC2 Version 2.20 of Day Month 20?? (rev: 2988c5f)
+TLC2 Version 2.20 of Day Month 20?? (rev: 0320106)
 @!@!@ENDMSG 2262 @!@!@
 @!@!@STARTMSG 2187:0 @!@!@
-Running breadth-first search Model-Checking with fp 105 and seed 2368137080425221600 with 6 workers on 12 cores with 1193MB heap and 2681MB offheap memory [pid: 21340] (Windows 10 10.0 amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+Running breadth-first search Model-Checking with fp 13 and seed 5583937325936682565 with 6 workers on 16 cores with 1166MB heap and 2621MB offheap memory [pid: 33195] (Linux 6.8.0-49-generic amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
 @!@!@ENDMSG 2187 @!@!@
 @!@!@STARTMSG 2220:0 @!@!@
 Starting SANY...
 @!@!@ENDMSG 2220 @!@!@
-Parsing file F:\repos\practical-tla-plus-dusan\ch05\chapter05.toolbox\Model_1\MC.tla
-Parsing file F:\repos\practical-tla-plus-dusan\ch05\chapter05.toolbox\Model_1\chapter05.tla
-Parsing file E:\TLAToolbox-1.8.0-win32.win32.x86_64\toolbox\plugins\org.lamport.tlatools_1.0.0.202412030256\tla2sany\StandardModules\TLC.tla
-Parsing file E:\TLAToolbox-1.8.0-win32.win32.x86_64\toolbox\plugins\org.lamport.tlatools_1.0.0.202412030256\tla2sany\StandardModules\Integers.tla
-Parsing file E:\TLAToolbox-1.8.0-win32.win32.x86_64\toolbox\plugins\org.lamport.tlatools_1.0.0.202412030256\tla2sany\StandardModules\Sequences.tla
-Parsing file E:\TLAToolbox-1.8.0-win32.win32.x86_64\toolbox\plugins\org.lamport.tlatools_1.0.0.202412030256\tla2sany\StandardModules\Naturals.tla
-Parsing file E:\TLAToolbox-1.8.0-win32.win32.x86_64\toolbox\plugins\org.lamport.tlatools_1.0.0.202412030256\tla2sany\StandardModules\FiniteSets.tla
+Parsing file /home/duke-deuce/repos/practical-tla-plus-dusan/ch05/chapter05.toolbox/Model_1/MC.tla
+Parsing file /home/duke-deuce/repos/practical-tla-plus-dusan/ch05/chapter05.toolbox/Model_1/chapter05.tla
+Parsing file /opt/TLA+Toolbox/plugins/org.lamport.tlatools_1.0.0.202412081644/tla2sany/StandardModules/TLC.tla
+Parsing file /opt/TLA+Toolbox/plugins/org.lamport.tlatools_1.0.0.202412081644/tla2sany/StandardModules/Integers.tla
+Parsing file /opt/TLA+Toolbox/plugins/org.lamport.tlatools_1.0.0.202412081644/tla2sany/StandardModules/Sequences.tla
+Parsing file /opt/TLA+Toolbox/plugins/org.lamport.tlatools_1.0.0.202412081644/tla2sany/StandardModules/Naturals.tla
+Parsing file /opt/TLA+Toolbox/plugins/org.lamport.tlatools_1.0.0.202412081644/tla2sany/StandardModules/FiniteSets.tla
 Semantic processing of module Naturals
 Semantic processing of module Sequences
 Semantic processing of module FiniteSets
@@ -25,13 +25,13 @@ Semantic processing of module MC
 SANY finished.
 @!@!@ENDMSG 2219 @!@!@
 @!@!@STARTMSG 2185:0 @!@!@
-Starting... (2024-12-13 17:56:27)
+Starting... (2024-12-15 23:07:45)
 @!@!@ENDMSG 2185 @!@!@
 @!@!@STARTMSG 2189:0 @!@!@
 Computing initial states...
 @!@!@ENDMSG 2189 @!@!@
 @!@!@STARTMSG 2190:0 @!@!@
-Finished computing initial states: 1 distinct state generated at 2024-12-13 17:56:28.
+Finished computing initial states: 1 distinct state generated at 2024-12-15 23:07:46.
 @!@!@ENDMSG 2190 @!@!@
 @!@!@STARTMSG 2114:1 @!@!@
 Deadlock reached.
@@ -41,173 +41,300 @@ The behavior up to this point is:
 @!@!@ENDMSG 2121 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
 1: <Initial predicate>
+/\ val = [writer |-> "", r1 |-> "", r2 |-> ""]
+/\ stack = [writer |-> <<>>, r1 |-> <<>>, r2 |-> <<>>]
 /\ current_message = [r1 |-> "none", r2 |-> "none"]
 /\ pc = [writer |-> "Write", r1 |-> "Read", r2 |-> "Read"]
 /\ queue = <<>>
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
-2: <Write line 62, col 10 to line 66, col 37 of module chapter05>
+2: <Write line 83, col 10 to line 90, col 50 of module chapter05>
+/\ val = [writer |-> "msg", r1 |-> "", r2 |-> ""]
+/\ stack = [ writer |-> <<[pc |-> "Write", val |-> "", procedure |-> "add_to_queue"]>>,
+  r1 |-> <<>>,
+  r2 |-> <<>> ]
+/\ current_message = [r1 |-> "none", r2 |-> "none"]
+/\ pc = [writer |-> "Add", r1 |-> "Read", r2 |-> "Read"]
+/\ queue = <<>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+3: <Add("writer") line 73, col 14 to line 79, col 41 of module chapter05>
+/\ val = [writer |-> "", r1 |-> "", r2 |-> ""]
+/\ stack = [writer |-> <<>>, r1 |-> <<>>, r2 |-> <<>>]
 /\ current_message = [r1 |-> "none", r2 |-> "none"]
 /\ pc = [writer |-> "Write", r1 |-> "Read", r2 |-> "Read"]
 /\ queue = <<"msg">>
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
-3: <Write line 62, col 10 to line 66, col 37 of module chapter05>
+4: <Write line 83, col 10 to line 90, col 50 of module chapter05>
+/\ val = [writer |-> "msg", r1 |-> "", r2 |-> ""]
+/\ stack = [ writer |-> <<[pc |-> "Write", val |-> "", procedure |-> "add_to_queue"]>>,
+  r1 |-> <<>>,
+  r2 |-> <<>> ]
+/\ current_message = [r1 |-> "none", r2 |-> "none"]
+/\ pc = [writer |-> "Add", r1 |-> "Read", r2 |-> "Read"]
+/\ queue = <<"msg">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+5: <Add("writer") line 73, col 14 to line 79, col 41 of module chapter05>
+/\ val = [writer |-> "", r1 |-> "", r2 |-> ""]
+/\ stack = [writer |-> <<>>, r1 |-> <<>>, r2 |-> <<>>]
 /\ current_message = [r1 |-> "none", r2 |-> "none"]
 /\ pc = [writer |-> "Write", r1 |-> "Read", r2 |-> "Read"]
 /\ queue = <<"msg", "msg">>
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
-4: <Read("r1") line 70, col 15 to line 76, col 66 of module chapter05>
+6: <Write line 83, col 10 to line 90, col 50 of module chapter05>
+/\ val = [writer |-> "msg", r1 |-> "", r2 |-> ""]
+/\ stack = [ writer |-> <<[pc |-> "Write", val |-> "", procedure |-> "add_to_queue"]>>,
+  r1 |-> <<>>,
+  r2 |-> <<>> ]
+/\ current_message = [r1 |-> "none", r2 |-> "none"]
+/\ pc = [writer |-> "Add", r1 |-> "Read", r2 |-> "Read"]
+/\ queue = <<"msg", "msg">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+7: <Read("r1") line 94, col 15 to line 101, col 43 of module chapter05>
+/\ val = [writer |-> "msg", r1 |-> "", r2 |-> ""]
+/\ stack = [ writer |-> <<[pc |-> "Write", val |-> "", procedure |-> "add_to_queue"]>>,
+  r1 |-> <<>>,
+  r2 |-> <<>> ]
 /\ current_message = [r1 |-> "msg", r2 |-> "none"]
-/\ pc = [writer |-> "Write", r1 |-> "NotifyFailure", r2 |-> "Read"]
+/\ pc = [writer |-> "Add", r1 |-> "NotifyFailure", r2 |-> "Read"]
 /\ queue = <<"msg">>
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
-5: <Write line 62, col 10 to line 66, col 37 of module chapter05>
+8: <Add("writer") line 73, col 14 to line 79, col 41 of module chapter05>
+/\ val = [writer |-> "", r1 |-> "", r2 |-> ""]
+/\ stack = [writer |-> <<>>, r1 |-> <<>>, r2 |-> <<>>]
 /\ current_message = [r1 |-> "msg", r2 |-> "none"]
 /\ pc = [writer |-> "Write", r1 |-> "NotifyFailure", r2 |-> "Read"]
 /\ queue = <<"msg", "msg">>
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
-6: <Read("r2") line 70, col 15 to line 76, col 66 of module chapter05>
-/\ current_message = [r1 |-> "msg", r2 |-> "msg"]
-/\ pc = [writer |-> "Write", r1 |-> "NotifyFailure", r2 |-> "NotifyFailure"]
+9: <Write line 83, col 10 to line 90, col 50 of module chapter05>
+/\ val = [writer |-> "msg", r1 |-> "", r2 |-> ""]
+/\ stack = [ writer |-> <<[pc |-> "Write", val |-> "", procedure |-> "add_to_queue"]>>,
+  r1 |-> <<>>,
+  r2 |-> <<>> ]
+/\ current_message = [r1 |-> "msg", r2 |-> "none"]
+/\ pc = [writer |-> "Add", r1 |-> "NotifyFailure", r2 |-> "Read"]
+/\ queue = <<"msg", "msg">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+10: <NotifyFailure("r1") line 103, col 24 to line 111, col 40 of module chapter05>
+/\ val = [writer |-> "msg", r1 |-> "r1", r2 |-> ""]
+/\ stack = [ writer |-> <<[pc |-> "Write", val |-> "", procedure |-> "add_to_queue"]>>,
+  r1 |-> <<[pc |-> "Read", val |-> "", procedure |-> "add_to_queue"]>>,
+  r2 |-> <<>> ]
+/\ current_message = [r1 |-> "none", r2 |-> "none"]
+/\ pc = [writer |-> "Add", r1 |-> "Add", r2 |-> "Read"]
+/\ queue = <<"msg", "msg">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+11: <Read("r2") line 94, col 15 to line 101, col 43 of module chapter05>
+/\ val = [writer |-> "msg", r1 |-> "r1", r2 |-> ""]
+/\ stack = [ writer |-> <<[pc |-> "Write", val |-> "", procedure |-> "add_to_queue"]>>,
+  r1 |-> <<[pc |-> "Read", val |-> "", procedure |-> "add_to_queue"]>>,
+  r2 |-> <<>> ]
+/\ current_message = [r1 |-> "none", r2 |-> "msg"]
+/\ pc = [writer |-> "Add", r1 |-> "Add", r2 |-> "NotifyFailure"]
 /\ queue = <<"msg">>
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2217:4 @!@!@
-7: <Write line 62, col 10 to line 66, col 37 of module chapter05>
-/\ current_message = [r1 |-> "msg", r2 |-> "msg"]
-/\ pc = [writer |-> "Write", r1 |-> "NotifyFailure", r2 |-> "NotifyFailure"]
+12: <Add("writer") line 73, col 14 to line 79, col 41 of module chapter05>
+/\ val = [writer |-> "", r1 |-> "r1", r2 |-> ""]
+/\ stack = [ writer |-> <<>>,
+  r1 |-> <<[pc |-> "Read", val |-> "", procedure |-> "add_to_queue"]>>,
+  r2 |-> <<>> ]
+/\ current_message = [r1 |-> "none", r2 |-> "msg"]
+/\ pc = [writer |-> "Write", r1 |-> "Add", r2 |-> "NotifyFailure"]
+/\ queue = <<"msg", "msg">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+13: <Write line 83, col 10 to line 90, col 50 of module chapter05>
+/\ val = [writer |-> "msg", r1 |-> "r1", r2 |-> ""]
+/\ stack = [ writer |-> <<[pc |-> "Write", val |-> "", procedure |-> "add_to_queue"]>>,
+  r1 |-> <<[pc |-> "Read", val |-> "", procedure |-> "add_to_queue"]>>,
+  r2 |-> <<>> ]
+/\ current_message = [r1 |-> "none", r2 |-> "msg"]
+/\ pc = [writer |-> "Add", r1 |-> "Add", r2 |-> "NotifyFailure"]
+/\ queue = <<"msg", "msg">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+14: <NotifyFailure("r2") line 103, col 24 to line 111, col 40 of module chapter05>
+/\ val = [writer |-> "msg", r1 |-> "r1", r2 |-> "r2"]
+/\ stack = [ writer |-> <<[pc |-> "Write", val |-> "", procedure |-> "add_to_queue"]>>,
+  r1 |-> <<[pc |-> "Read", val |-> "", procedure |-> "add_to_queue"]>>,
+  r2 |-> <<[pc |-> "Read", val |-> "", procedure |-> "add_to_queue"]>> ]
+/\ current_message = [r1 |-> "none", r2 |-> "none"]
+/\ pc = [writer |-> "Add", r1 |-> "Add", r2 |-> "Add"]
 /\ queue = <<"msg", "msg">>
 
 @!@!@ENDMSG 2217 @!@!@
 @!@!@STARTMSG 2201:0 @!@!@
-The coverage statistics at 2024-12-13 17:56:28
+The coverage statistics at 2024-12-15 23:07:46
 @!@!@ENDMSG 2201 @!@!@
 @!@!@STARTMSG 2773:0 @!@!@
-<Init line 55, col 1 to line 55, col 4 of module chapter05>: 7:7
+<Init line 63, col 1 to line 63, col 4 of module chapter05>: 5:5
 @!@!@ENDMSG 2773 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 56, col 12 to line 56, col 23 of module chapter05: 7
+  line 64, col 12 to line 64, col 23 of module chapter05: 5
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2775:0 @!@!@
-  line 58, col 30 to line 58, col 63 of module chapter05: 7:14
-@!@!@ENDMSG 2775 @!@!@
-@!@!@STARTMSG 2775:0 @!@!@
-  |line 58, col 40 to line 58, col 51 of module chapter05: 7:21
+  line 66, col 18 to line 66, col 43 of module chapter05: 5:15
 @!@!@ENDMSG 2775 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 59, col 12 to line 60, col 75 of module chapter05: 7
+  |line 66, col 29 to line 66, col 35 of module chapter05: 5
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2775:0 @!@!@
-  |line 59, col 17 to line 60, col 75 of module chapter05: 7:21
+  line 68, col 30 to line 68, col 63 of module chapter05: 5:10
+@!@!@ENDMSG 2775 @!@!@
+@!@!@STARTMSG 2775:0 @!@!@
+  |line 68, col 40 to line 68, col 51 of module chapter05: 5:15
+@!@!@ENDMSG 2775 @!@!@
+@!@!@STARTMSG 2775:0 @!@!@
+  line 69, col 20 to line 69, col 47 of module chapter05: 5:15
 @!@!@ENDMSG 2775 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 59, col 27 to line 59, col 33 of module chapter05: 7
+  |line 69, col 30 to line 69, col 36 of module chapter05: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 70, col 12 to line 71, col 75 of module chapter05: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2775:0 @!@!@
+  |line 70, col 17 to line 71, col 75 of module chapter05: 5:15
+@!@!@ENDMSG 2775 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 70, col 27 to line 70, col 33 of module chapter05: 5
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<Write line 62, col 1 to line 62, col 5 of module chapter05>: 56:121
+<Add line 73, col 1 to line 73, col 9 of module chapter05>: 229:349
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 62, col 13 to line 62, col 34 of module chapter05: 326
+  line 73, col 17 to line 73, col 32 of module chapter05: 2527
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 62, col 13 to line 62, col 24 of module chapter05: 205
+  |line 73, col 17 to line 73, col 24 of module chapter05: 2178
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 63, col 13 to line 63, col 37 of module chapter05: 121
+  line 74, col 17 to line 74, col 41 of module chapter05: 349
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 63, col 13 to line 63, col 22 of module chapter05: 205
+  |line 74, col 17 to line 74, col 26 of module chapter05: 577
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 63, col 26 to line 63, col 37 of module chapter05: 205
+  |line 74, col 30 to line 74, col 41 of module chapter05: 577
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 64, col 13 to line 64, col 41 of module chapter05: 121
+  line 75, col 17 to line 75, col 49 of module chapter05: 349
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 65, col 13 to line 65, col 51 of module chapter05: 121
+  line 76, col 17 to line 76, col 64 of module chapter05: 349
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 66, col 13 to line 66, col 37 of module chapter05: 121
+  line 77, col 17 to line 77, col 67 of module chapter05: 349
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 78, col 17 to line 78, col 67 of module chapter05: 349
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 79, col 17 to line 79, col 41 of module chapter05: 349
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<Read line 70, col 1 to line 70, col 10 of module chapter05>: 132:370
+<Write line 83, col 1 to line 83, col 5 of module chapter05>: 109:385
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 70, col 18 to line 70, col 34 of module chapter05: 535
+  line 83, col 13 to line 83, col 34 of module chapter05: 1142
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 70, col 18 to line 70, col 25 of module chapter05: 350
+  |line 83, col 13 to line 83, col 24 of module chapter05: 757
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 71, col 18 to line 71, col 30 of module chapter05: 416
+  line 84, col 13 to line 88, col 54 of module chapter05: 385
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 71, col 18 to line 71, col 22 of module chapter05: 231
+  line 89, col 13 to line 89, col 49 of module chapter05: 385
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 71, col 27 to line 71, col 30 of module chapter05: 231
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 72, col 18 to line 72, col 82 of module chapter05: 185
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 73, col 18 to line 73, col 37 of module chapter05: 185
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 74, col 18 to line 76, col 66 of module chapter05: 185
+  line 90, col 13 to line 90, col 50 of module chapter05: 385
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<NotifyFailure line 78, col 1 to line 78, col 19 of module chapter05>: 32:73
+<Read line 94, col 1 to line 94, col 10 of module chapter05>: 331:1270
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 78, col 27 to line 78, col 52 of module chapter05: 407
+  line 94, col 18 to line 94, col 34 of module chapter05: 2063
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 78, col 27 to line 78, col 34 of module chapter05: 334
+  |line 94, col 18 to line 94, col 25 of module chapter05: 1428
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 79, col 27 to line 79, col 86 of module chapter05: 73
+  line 95, col 18 to line 95, col 30 of module chapter05: 1398
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 79, col 46 to line 79, col 86 of module chapter05: 119
+  |line 95, col 18 to line 95, col 22 of module chapter05: 763
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 80, col 27 to line 80, col 51 of module chapter05: 73
+  |line 95, col 27 to line 95, col 30 of module chapter05: 763
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 80, col 27 to line 80, col 36 of module chapter05: 119
+  line 96, col 18 to line 96, col 82 of module chapter05: 635
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 80, col 40 to line 80, col 51 of module chapter05: 119
+  line 97, col 18 to line 97, col 37 of module chapter05: 635
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 81, col 27 to line 81, col 54 of module chapter05: 73
+  line 98, col 18 to line 100, col 66 of module chapter05: 635
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 82, col 27 to line 82, col 60 of module chapter05: 73
+  line 101, col 18 to line 101, col 43 of module chapter05: 1270
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<NotifyFailure line 103, col 1 to line 103, col 19 of module chapter05>: 117:463
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 103, col 27 to line 103, col 52 of module chapter05: 1881
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 103, col 27 to line 103, col 34 of module chapter05: 1418
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 104, col 27 to line 104, col 86 of module chapter05: 463
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 105, col 27 to line 109, col 63 of module chapter05: 463
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 110, col 27 to line 110, col 59 of module chapter05: 463
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 111, col 27 to line 111, col 40 of module chapter05: 463
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2202:0 @!@!@
 End of statistics.
 @!@!@ENDMSG 2202 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(10) at 2024-12-13 17:56:28: 498 states generated (28,322 s/min), 221 distinct states found (12,568 ds/min), 60 states left on queue.
+Progress(18) at 2024-12-15 23:07:46: 2,395 states generated (94,291 s/min), 787 distinct states found (30,984 ds/min), 88 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2199:0 @!@!@
-498 states generated, 221 distinct states found, 60 states left on queue.
+2395 states generated, 787 distinct states found, 88 states left on queue.
 @!@!@ENDMSG 2199 @!@!@
 @!@!@STARTMSG 2194:0 @!@!@
-The depth of the complete state graph search is 10.
+The depth of the complete state graph search is 18.
 @!@!@ENDMSG 2194 @!@!@
 @!@!@STARTMSG 2186:0 @!@!@
-Finished in 1063ms at (2024-12-13 17:56:28)
+Finished in 1533ms at (2024-12-15 23:07:46)
 @!@!@ENDMSG 2186 @!@!@
